@@ -42,12 +42,12 @@ button {
   color: #fff;
 
   border: none;
-  box-shadow: 0px 0px 1px #3700ff;
+  box-shadow: 0px 0px 1px #0000ff;
 
   opacity: 0;
 
-  animation: flashButton 3s linear infinite;
-  animation-delay: 12s;
+  animation: flashButton 3s linear infinite forwards;
+  animation-delay: 13s;
 
 }
 
@@ -73,7 +73,7 @@ button {
   stroke: #fff;
   stroke-dasharray: 100;
   stroke-dashoffset: 0;
-  animation: drawing ease-in-out 30s forwards;
+  animation: drawing ease-in-out 25s forwards;
   animation-delay: 1s;
 }
 
@@ -84,8 +84,8 @@ button {
   filter: blur(10px);
   fill-opacity: 0;
   stroke-opacity: 0;
-  animation: fillIn linear 1s forwards;
-  animation-delay: 4s;
+  animation: fillIn linear 1s forwards, drawing ease-in-out 25s forwards;
+  animation-delay: 4s, 1s;
 }
 
 .circle-1,
@@ -93,21 +93,22 @@ button {
   stroke: #fff;
   fill-opacity: 0;
   stroke-opacity: 0;
-  fill: rgb(0, 0, 255, 1)
 }
 
 
 .circle-1 {
+  fill: rgb(0, 0, 255, 1);
   filter: blur(20px);
-  animation: circle1 6s infinite, fillIn 2s linear forwards;
+  animation: circle1 5s infinite, fillIn 2s linear forwards;
   transform: translateX(130px);
   animation-delay: 0s, 6s;
 }
 
 .circle-2 {
+  fill: rgb(255, 0, 0, 1);
   filter: blur(20px);
   transform: translateX(-130px);
-  animation: circle2 6s infinite, fillIn 2s linear forwards;
+  animation: circle2 5s infinite, fillIn 2s linear forwards;
   animation-delay: 0s, 6s;
 }
 
@@ -126,9 +127,9 @@ button {
 }
 
 .button-a {
-  fill: rgb(0, 205, 255, .75);
+  fill: rgb(0, 0, 255, 1);
   fill-opacity: 0;
-  animation: flashButton 2s infinite linear forwards;
+  animation: flashButton 3s infinite linear forwards;
 }
 
 .button-b {
@@ -250,6 +251,20 @@ button {
     stroke-dasharray: 5500;
 
   }
+}
+
+footer {
+  width: 100%;
+  background-color: #000;
+  /* height: 2rem; */
+  padding: 1rem;
+  position: fixed;
+  bottom: 0;
+  text-align: center;
+}
+
+footer p {
+  color: #fff;
 }
 
 @media screen and (max-width: 768px) {
