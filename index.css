@@ -30,7 +30,24 @@ body {
 
   opacity: 0;
 
-  animation: fadeIn ease 10s forwards;
+  animation: fadeIn ease 20s forwards;
+
+}
+
+button {
+  width: 240px;
+  height: 60px;
+
+  background-color: #000;
+  color: #fff;
+
+  border: none;
+  box-shadow: 0px 0px 1px #3700ff;
+
+  opacity: 0;
+
+  animation: flashButton 3s linear infinite;
+  animation-delay: 12s;
 
 }
 
@@ -45,7 +62,7 @@ body {
 
   animation: fadeInImage ease 10s forwards;
   animation-delay: 8s;
-  box-shadow: rgba(0, 0, 255, .75) 0px 0px 200px;
+  box-shadow: rgba(0, 0, 255, 1) 0px 0px 200px;
 }
 
 
@@ -56,8 +73,8 @@ body {
   stroke: #fff;
   stroke-dasharray: 100;
   stroke-dashoffset: 0;
-  animation: drawing ease-in-out 10s forwards;
-  animation-delay: 500ms;
+  animation: drawing ease-in-out 30s forwards;
+  animation-delay: 1s;
 }
 
 
@@ -99,49 +116,70 @@ body {
 .arrow-up,
 .arrow-down,
 .arrow-right,
-.button {
+.button-b,
+.button-y,
+.button-a,
+.button-x {
   fill: none;
   animation: flashArrow .25s forwards, flashButton 2s linear forwards;
-  animation-delay: 8s;
 
+}
+
+.button-a {
+  fill: rgb(0, 205, 255, .75);
+  fill-opacity: 0;
+  animation: flashButton 2s infinite linear forwards;
+}
+
+.button-b {
+  animation-delay: 10.15s;
+}
+
+.button-y {
+  animation-delay: 10.3s;
 }
 
 .button-x {
-  fill: rgb(0, 205, 255, .75);
-  fill-opacity: 0;
-  animation: flashButton 3s infinite linear forwards;
-  animation-delay: 10s;
-
+  animation-delay: 10.45s;
 }
+
+.button-a {
+  cursor: pointer;
+  animation-delay: 10.6s;
+}
+
 
 
 .arrow-up {
-  animation-delay: 4.15s;
+  animation-delay: 8.15s;
 }
 
 .arrow-left {
-  animation-delay: 4.3s;
+  animation-delay: 8.3s;
 }
 
 .arrow-down {
-  animation-delay: 4.45s;
+  animation-delay: 8.45s;
 }
 
 .arrow-right {
-  animation-delay: 4.6s;
+  animation-delay: 8.6s;
 }
 
 
 @keyframes flashButton {
   0% {
     fill-opacity: 1;
+    opacity: 1;
   }
 
   50% {
+    opacity: 0;
     fill-opacity: 0;
   }
 
   100% {
+    opacity: 1;
     fill-opacity: 1;
   }
 
@@ -202,7 +240,7 @@ body {
 
 @keyframes fadeInImage {
   to {
-    opacity: .25;
+    opacity: .10;
   }
 }
 
